@@ -1,0 +1,41 @@
+<div>
+  あのバス停を通過するバスは、今どこを走っている？
+</div>
+
+<div>
+  バス停の名前
+</div>
+<input class="query-input" [(ngModel)]="box">
+<button class="search" (click)="onSearch(box)">検索</button>
+
+<section *ngFor="let view of viewData">
+  <table>
+    <tr>
+      <th>路線</th>
+      <td>{{view.rosen}}</td>
+    </tr>
+    <tr>
+      <th>行き先</th>
+      <td>{{view.ikisaki}}</td>
+    </tr>
+    <tr>
+      <th>次のバス停</th>
+      <td>{{view.busstop}}</td>
+    </tr>
+    <tr *ngFor="let pass of view.passed">
+      <th>{{pass.busstop}}</th>
+      <td>{{pass.passed ? '通過しました' : '通過してません'}}</td>
+    </tr>
+  </table>
+</section>
+
+<footer>
+  <div>
+    データ提供: <a href="http://busnavi.keifuku.co.jp/webapi/index.html">京福バスナビ WEB API</a>
+  </div>
+  <div>
+    バス停の名前からバスを検索したかったので作りました。
+  </div>
+</footer>
+
+<router-outlet></router-outlet>
