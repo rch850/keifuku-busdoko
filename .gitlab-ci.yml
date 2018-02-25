@@ -1,0 +1,10 @@
+image: circleci/node:6-browsers
+
+cache:
+  paths:
+  - node_modules/
+
+test:
+  script:
+  - yarn install
+  - yarn test --browsers ChromeHeadless --single-run
