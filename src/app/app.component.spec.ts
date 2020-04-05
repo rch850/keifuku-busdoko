@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { KeifukuService } from './keifuku.service';
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 
 describe('AppComponent', () => {
   let keifukuServiceStub;
